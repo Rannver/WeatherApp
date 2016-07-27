@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:text="已选择城市"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="#3c3b3b"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_2"
+        android:text=" "
+        android:textColor="#3c3b3b"
+        android:gravity="center"
+        android:layout_below="@+id/tv1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加城市"
+        android:id="@+id/btu_AddCity"
+        android:textSize="13dp"
+        android:background="#02fcfbfb"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btu_DeleteCity"
+        android:text="删除城市"
+        android:textSize="13sp"
+        android:background="#02fcfbfb"
+        android:layout_alignParentRight="true"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_city"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/tv_2"
+        >
+
+    </ListView>
+
+
+
+</RelativeLayout>

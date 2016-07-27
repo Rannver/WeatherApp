@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.6"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/iv_background"
+            android:src="@drawable/bg_sun2"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_cityname"
+            android:text="#/A"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:paddingTop="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/root_temp"
+            android:layout_below="@+id/tv_cityname">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.46"
+                android:id="@+id/tv_temperature"
+                android:text="#/A"
+                android:textSize="95sp"
+                android:textColor="#ffffff"
+                android:gravity="right"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:text="°"
+                android:textSize="95sp"
+                android:textColor="#ffffff"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_weather"
+            android:text="温度#/A 区间#/A"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_below="@+id/root_temp"
+            android:paddingTop="12dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_wind"
+            android:text="风向#/A 风力#/A"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/tv_weather"
+            android:gravity="center"
+            android:paddingTop="8dp" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_SunTime"
+            android:text="日出：#/A"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:layout_below="@id/tv_wind"
+            android:paddingTop="8dp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_position"
+            android:text="坐标：#/A"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:layout_below="@+id/tv_SunTime"
+            android:paddingTop="8dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_f5"
+            android:text="更新时间：#/A"
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:paddingBottom="10dp"
+            android:layout_alignBottom="@+id/iv_background"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新时间："
+            android:textSize="13sp"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/iv_background"
+            android:layout_toLeftOf="@+id/tv_f5"
+            android:paddingBottom="10dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btu_city"
+            android:background="@drawable/add"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btu_refresh"
+            android:src="@drawable/refresh"
+            android:background="#00000000"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/R_List"
+        android:paddingTop="10dp">
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+
+</LinearLayout>

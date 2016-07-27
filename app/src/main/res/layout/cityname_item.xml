@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_district"
+        android:text="district"
+        android:textSize="20sp"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp"
+        android:textColor="#060606"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_province"
+        android:text=" "
+        android:textSize="15sp"
+        android:paddingRight="5dp"
+        android:textColor="#535353"
+        android:layout_below="@+id/tv_district"
+        android:layout_toLeftOf="@+id/tv_city"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_city"
+        android:text=" "
+        android:textSize="15sp"
+        android:textColor="#535353"
+        android:paddingRight="5dp"
+        android:layout_below="@+id/tv_district"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
