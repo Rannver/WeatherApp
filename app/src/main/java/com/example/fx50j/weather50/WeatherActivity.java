@@ -92,6 +92,17 @@ public class WeatherActivity extends AppCompatActivity {
                 tv_cityname.setText(city_name);
                 LoadWeatherData_today(city_code);
                 LoadWeatherData_Future(city_code);
+            }else{
+                String city_name = "北京";
+                String city_code = "101010100";
+                ShowCityNowWeather(city_name,city_code);
+                ShowCityFutureWeather(city_code,city_code);
+                ContentValues values = new ContentValues();
+                values.put("cityname",city_name);
+                values.put("cityid",city_code);
+                db.insert("city",null,values);
+                values.clear();
+
             }
         }else{
             //显示现在的天气
@@ -404,6 +415,13 @@ public class WeatherActivity extends AppCompatActivity {
             tv_SunTime.setText("日出：" + today_sunrise + "  " + "日落：" + today_sunset);
             tv_position.setText("坐标：" + today_longitude + "," + today_latitude);
             tv_f5.setText(today_date + " " + today_time);
+        }else{
+            tv_temp.setText("#/A");
+            tv_weather.setText("#/A" + "  " + "#/A" + "℃~" +"#/A"+ "℃");
+            tv_wind.setText("#/A" + "  " + "#/A");
+            tv_SunTime.setText("日出：" + "#/A" + "  " + "日落：" + "#/A");
+            tv_position.setText("坐标：" + "#/A" + "," + "#/A");
+            tv_f5.setText("#/A" + " " + "#/A");
         }
     }
 
@@ -412,7 +430,7 @@ public class WeatherActivity extends AppCompatActivity {
         weatherDatabaseAdpter =new WeatherDatabaseAdpter(this,"WeatherData.db",null,4);
         SQLiteDatabase db = weatherDatabaseAdpter.getWritableDatabase();
         Cursor cursor = db.query("future_weather", null, "cityid = ?", new String[]{city_id}, null, null, null);
-        final List<FutureWeatherBean> futureWeatherBeanList = new ArrayList<FutureWeatherBean>();
+        List<FutureWeatherBean> futureWeatherBeanList = new ArrayList<FutureWeatherBean>();
 
         if (cursor.moveToFirst()){
             do {
@@ -430,10 +448,22 @@ public class WeatherActivity extends AppCompatActivity {
                 futureWeatherBean.SetLowtemp(future_tempmin);
                 futureWeatherBean.SetType(future_type);
                 futureWeatherBeanList.add(futureWeatherBean);
-
-                FutureWeatherAdpter futureWeatherAdpter = new FutureWeatherAdpter(futureWeatherBeanList);
-                recyclerView.setAdapter(futureWeatherAdpter);
             }while (cursor.moveToNext());
+            FutureWeatherAdpter futureWeatherAdpter = new FutureWeatherAdpter(futureWeatherBeanList);
+            recyclerView.setAdapter(futureWeatherAdpter);
+        }else{
+            for(int i=0;i<8;i++){
+                FutureWeatherBean futureWeatherBean = new FutureWeatherBean();
+                futureWeatherBean.SetDate("#/A");
+                futureWeatherBean.SetWeek("#/A");
+                futureWeatherBean.SetWind("#/A");
+                futureWeatherBean.SetHightemp("#/A");
+                futureWeatherBean.SetLowtemp("#/A");
+                futureWeatherBean.SetType("#/A");
+                futureWeatherBeanList.add(futureWeatherBean);
+            }
+            FutureWeatherAdpter futureWeatherAdpter = new FutureWeatherAdpter(futureWeatherBeanList);
+            recyclerView.setAdapter(futureWeatherAdpter);
         }
     }
 }

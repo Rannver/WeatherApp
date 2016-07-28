@@ -18,9 +18,7 @@ public class FutureWeatherAdpter extends RecyclerView.Adapter<FutureWeatherAdpte
 
     //调用构造函数传递数据（这点竟然想这么久mdzz
     public FutureWeatherAdpter(List<FutureWeatherBean> futureweatherList){
-
         futureWeatherList = futureweatherList;
-
     }
 
     @Override
